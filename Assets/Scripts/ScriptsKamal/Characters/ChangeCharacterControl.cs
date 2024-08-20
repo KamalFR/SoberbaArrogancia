@@ -5,29 +5,43 @@ using UnityEngine;
 public class ChangeCharacterControl : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
+<<<<<<< HEAD
     [SerializeField] private int jumpForce;
+=======
+    [SerializeField] private int JumpForce;
+>>>>>>> 0db458e945e75b3f60bca185aeda83c9a8a22cbb
     [SerializeField] private int hugoBurroSpeed;
     private int actualCharacter;
     public PlayerBase player;
     private PlayerMovement playerMovement;
     private int normalSpeed;
+<<<<<<< HEAD
     private bool canChange;
     private bool onFloor;
+=======
+>>>>>>> 0db458e945e75b3f60bca185aeda83c9a8a22cbb
     private void Start()
     {
         actualCharacter = 1;
         player = new HugoBurro();
         playerMovement = GetComponent<PlayerMovement>();
         normalSpeed = playerMovement.GetSpeed();
+<<<<<<< HEAD
         player.EnterCharacter(this);
         canChange = true;
         onFloor = true;
+=======
+        player.EnterCharacter(bullet, JumpForce, playerMovement, hugoBurroSpeed);
+>>>>>>> 0db458e945e75b3f60bca185aeda83c9a8a22cbb
     }
     // Update is called once per frame
     private void Update()
     {
         CharacterSelection();
+<<<<<<< HEAD
         player.UpdateCharacter(this);
+=======
+>>>>>>> 0db458e945e75b3f60bca185aeda83c9a8a22cbb
     }
     private void CharacterSelection()
     {
@@ -38,11 +52,16 @@ public class ChangeCharacterControl : MonoBehaviour
             player = new HugoBurro();
             
         }
+<<<<<<< HEAD
         if ((Input.GetKeyDown(KeyCode.Alpha2)) && (actualCharacter != 2) && (canChange))
+=======
+        if ((Input.GetKeyDown(KeyCode.Alpha2)) && (actualCharacter != 2))
+>>>>>>> 0db458e945e75b3f60bca185aeda83c9a8a22cbb
         {
             actualCharacter = 2;
             player = new AlwaysZUp();
         }
+<<<<<<< HEAD
         if ((Input.GetKeyDown(KeyCode.Alpha3)) && (actualCharacter != 3) && (canChange))
         {
             actualCharacter = 3;
@@ -114,6 +133,22 @@ public class ChangeCharacterControl : MonoBehaviour
         if(collision.transform.tag == "Floor")
         {
             onFloor = true;
+=======
+        if ((Input.GetKeyDown(KeyCode.Alpha3)) && (actualCharacter != 3))
+        {
+            actualCharacter = 3;
+            player = new Iuno();
+        }
+        if ((Input.GetKeyDown(KeyCode.Alpha4)) && (actualCharacter != 4))
+        {
+            actualCharacter = 4;
+            player = new Comander();
+        }
+        if(ant != actualCharacter)
+        {
+            playerMovement.SetSpeed(normalSpeed);
+            player.EnterCharacter(bullet, JumpForce, playerMovement, hugoBurroSpeed);
+>>>>>>> 0db458e945e75b3f60bca185aeda83c9a8a22cbb
         }
     }
 }

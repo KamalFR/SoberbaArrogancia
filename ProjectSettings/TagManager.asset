@@ -3,9 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags:
   - Roof
   - Floor
+=======
+  tags: []
+>>>>>>> 0db458e945e75b3f60bca185aeda83c9a8a22cbb
   layers:
   - Default
   - TransparentFX

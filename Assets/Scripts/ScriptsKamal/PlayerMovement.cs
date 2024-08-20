@@ -33,11 +33,14 @@ public class PlayerMovement : MonoBehaviour
     public void SetLastMove(Vector3 movementDirection)
     {
         Vector3 zero = new Vector3(0f, 0f, 0f);
+<<<<<<< HEAD
         movementDirection.y = 0f;
         if ((movementDirection.x != 0) && (System.Math.Abs(movementDirection.x) < 1))
         {
             movementDirection.x /= 0.71f;
         }
+=======
+>>>>>>> 0db458e945e75b3f60bca185aeda83c9a8a22cbb
         if (movementDirection != zero)
         {
             lastMove = movementDirection;
@@ -50,11 +53,16 @@ public class PlayerMovement : MonoBehaviour
         {
             movementDirection.x /= 0.71f;
         }
+<<<<<<< HEAD
         if (speed > 0f)
         {
             rb.velocity = new Vector3(movementDirection.x, rb.velocity.y / speed, 0f) * speed; //os comandos não podem alterar a velocidade do pulo
         }
         SetLastMove(context.ReadValue<Vector2>());
+=======
+        rb.velocity = new Vector3(movementDirection.x, 0f, 0f)*speed;
+        SetLastMove(movementDirection);
+>>>>>>> 0db458e945e75b3f60bca185aeda83c9a8a22cbb
     }
     public int GetSpeed()
     {

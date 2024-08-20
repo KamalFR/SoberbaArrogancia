@@ -342,6 +342,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &684068402
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +473,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> 0db458e945e75b3f60bca185aeda83c9a8a22cbb
 --- !u!1 &853030928
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,7 +489,11 @@ GameObject:
   - component: {fileID: 853030929}
   m_Layer: 0
   m_Name: "Ch\xE3o"
+<<<<<<< HEAD
   m_TagString: Floor
+=======
+  m_TagString: Untagged
+>>>>>>> 0db458e945e75b3f60bca185aeda83c9a8a22cbb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -646,7 +653,11 @@ GameObject:
   - component: {fileID: 1833843414}
   - component: {fileID: 1833843415}
   m_Layer: 0
+<<<<<<< HEAD
   m_Name: Player
+=======
+  m_Name: Square
+>>>>>>> 0db458e945e75b3f60bca185aeda83c9a8a22cbb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -717,7 +728,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
+<<<<<<< HEAD
   m_GravityScale: 1
+=======
+  m_GravityScale: 0
+>>>>>>> 0db458e945e75b3f60bca185aeda83c9a8a22cbb
   m_Material: {fileID: 6200000, guid: cfbe8f17e0271e041b9b439206f68cff, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -866,9 +881,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f4c637d5e10e848874032e5d0a24f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   bullet: {fileID: 4429733206287492282, guid: c51c88cc4c2e59c4cb860bbaf1751b45, type: 3}
   jumpForce: 10
   hugoBurroSpeed: 10
+=======
+  bullet: {fileID: 0}
+  JumpForce: 20000
+  hugoBurroSpeed: 20
+  player: {fileID: 0}
+>>>>>>> 0db458e945e75b3f60bca185aeda83c9a8a22cbb
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -877,4 +899,7 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 853030932}
   - {fileID: 1833843413}
+<<<<<<< HEAD
   - {fileID: 684068405}
+=======
+>>>>>>> 0db458e945e75b3f60bca185aeda83c9a8a22cbb
