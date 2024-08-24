@@ -15,6 +15,7 @@ public class BigBoss : MonoBehaviour
 
     public void Movements()
     {
+        //checa a direção que o player está e vai até lá
         if (PlayerPosition.instance.transform.position.x > transform.position.x)
         {
             _direction = new Vector3(1, 0);
@@ -35,6 +36,7 @@ public class BigBoss : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //recuo ao tocar o player
         if (collision.transform.tag == "Player")
         {
             transform.DOMoveX(transform.position.x -_direction.x, .9f);
