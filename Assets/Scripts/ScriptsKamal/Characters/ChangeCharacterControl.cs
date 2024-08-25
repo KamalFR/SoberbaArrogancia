@@ -13,6 +13,9 @@ public class ChangeCharacterControl : MonoBehaviour
     private int normalSpeed;
     private bool canChange;
     private bool onFloor;
+    private bool isIuno;
+    private bool canInteract;
+    private SwitchControl interactable;
     private void Start()
     {
         actualCharacter = 1;
@@ -22,6 +25,8 @@ public class ChangeCharacterControl : MonoBehaviour
         player.EnterCharacter(this);
         canChange = true;
         onFloor = true;
+        isIuno = false;
+        canInteract = false;
     }
     // Update is called once per frame
     private void Update()
@@ -87,12 +92,37 @@ public class ChangeCharacterControl : MonoBehaviour
     {
         onFloor = set;
     }
+    public void SetIsIuno(bool set)
+    {
+        isIuno = set;
+        if(set == false)
+        {
+            canInteract = false;
+        }
+    }
+    public bool GetCanInteract()
+    {
+        return canInteract;
+    }
+    public void SetCanInteract(bool set)
+    {
+        canInteract = set;
+    }
+    public SwitchControl GetInteractable()
+    {
+        return interactable;
+    }
     //ver se o Huguinho pode mudar para os outros personagens maiores
-    private void OnTriggerEnter2D(Collider2D collision) //quando eu fico encostado e mudo pro Huguinho ele não registra a entrada
+    private void OnTriggerEnter2D(Collider2D collision) //quando eu fico encostado e mudo pra alguem ele não registra a entrada
     {
         if (collision.tag == "Roof")
         {
             canChange = false;
+        }
+        if((collision.tag == "Switch") && (isIuno))
+        {
+            interactable = collision.GetComponent<SwitchControl>();
+            canInteract = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -101,12 +131,21 @@ public class ChangeCharacterControl : MonoBehaviour
         {
             canChange = true;
         }
+        if (collision.tag == "Switch")
+        {
+            canInteract = false;
+        }
     }
-    private void OnTriggerStay2D(Collider2D collision) //diminiu a bastante chance de bugar
+    private void OnTriggerStay2D(Collider2D collision) //diminiu bastante chance de bugar
     {
         if(collision.tag == "Roof")
         {
             canChange = false;
+        }
+        if ((collision.tag == "Switch") && (isIuno))
+        {
+            interactable = collision.GetComponent<SwitchControl>();
+            canInteract = true;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

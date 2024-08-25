@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private int speed = 10;
+    [SerializeField] private float gravityMultiplier;
+    private float normalGravity;
     private Rigidbody2D rb;
     private PlayerInputs input;
     private Vector3 lastMove;
@@ -14,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         input = new PlayerInputs();
+        normalGravity = rb.gravityScale;
     }
     private void OnEnable()
     {
@@ -33,10 +36,9 @@ public class PlayerMovement : MonoBehaviour
     public void SetLastMove(Vector3 movementDirection)
     {
         Vector3 zero = new Vector3(0f, 0f, 0f);
-        movementDirection.y = 0f;
-        if ((movementDirection.x != 0) && (System.Math.Abs(movementDirection.x) < 1))
+        if (movementDirection.y < 0)
         {
-            movementDirection.x /= 0.71f;
+            movementDirection.y = 0f;
         }
         if (movementDirection != zero)
         {
@@ -46,15 +48,26 @@ public class PlayerMovement : MonoBehaviour
     private void OnMove(InputAction.CallbackContext context)
     {
         Vector3 movementDirection = context.ReadValue<Vector2>();
-        if((movementDirection.x != 0) && (System.Math.Abs(movementDirection.x) < 1))
+        SetLastMove(context.ReadValue<Vector2>());
+        if ((movementDirection.x != 0) && (System.Math.Abs(movementDirection.x) < 1))
         {
             movementDirection.x /= 0.71f;
         }
         if (speed > 0f)
         {
-            rb.velocity = new Vector3(movementDirection.x, rb.velocity.y / speed, 0f) * speed; //os comandos não podem alterar a velocidade do pulo
+            rb.velocity = new Vector3(movementDirection.x, rb.velocity.y / speed, 0f) * speed; //os comandos não podem alterar a velocidade do pulo, por isso a parte do "rb.velocity.y / speed"
         }
-        SetLastMove(context.ReadValue<Vector2>());
+    }
+    private void Update()
+    {
+        if (rb.velocity.y < 1f)
+        {
+            rb.gravityScale = normalGravity * gravityMultiplier;
+        }
+        else
+        {
+            rb.gravityScale = normalGravity;
+        }
     }
     public int GetSpeed()
     {

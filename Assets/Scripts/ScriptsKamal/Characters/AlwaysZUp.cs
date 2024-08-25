@@ -13,6 +13,7 @@ public class AlwaysZUp : PlayerBase
         player.BackToNormalSpeed();
         jumpForce = player.GetJumpForce();
         didSecondJump = true; //é necessário ser true para a repitição do código
+        player.SetIsIuno(false);
     }
 
     public override void UpdateCharacter(ChangeCharacterControl player)

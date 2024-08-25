@@ -11,6 +11,7 @@ public class Comander : PlayerBase
         player.GetComponent<BoxCollider2D>().isTrigger = false;
         player.GetPlayerMovement().SetSpeed(0);
         bullet = player.GetBulletPrefab();
+        player.SetIsIuno(false);
     }
     public override void UpdateCharacter(ChangeCharacterControl player)
     {
