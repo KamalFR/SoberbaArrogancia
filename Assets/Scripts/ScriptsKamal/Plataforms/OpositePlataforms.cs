@@ -5,7 +5,7 @@ using UnityEngine;
 public class OpositePlataforms : MonoBehaviour
 {
     [SerializeField] private BlackOrGray thisPlataformColor;
-    private void Awake()
+    private void Start()
     {
         BlackOrGrayControl.activeCollor = BlackOrGray.Black;
     }

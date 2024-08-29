@@ -7,8 +7,8 @@ public class ChangeCharacterControl : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private int jumpForce;
     [SerializeField] private int hugoBurroSpeed;
-    private int actualCharacter;
-    public PlayerBase player;
+    private Grupo3Protagonistas actualCharacter;
+    private PlayerBase player;
     private PlayerMovement playerMovement;
     private int normalSpeed;
     private bool canChange;
@@ -18,7 +18,7 @@ public class ChangeCharacterControl : MonoBehaviour
     private SwitchControl interactable;
     private void Start()
     {
-        actualCharacter = 1;
+        actualCharacter = Grupo3Protagonistas.HugoBurro;
         player = new HugoBurro();
         playerMovement = GetComponent<PlayerMovement>();
         normalSpeed = playerMovement.GetSpeed();
@@ -36,26 +36,26 @@ public class ChangeCharacterControl : MonoBehaviour
     }
     private void CharacterSelection()
     {
-        int ant = actualCharacter;
-        if((Input.GetKeyDown(KeyCode.Alpha1))&&(actualCharacter != 1)) 
+        Grupo3Protagonistas ant = actualCharacter;
+        if((Input.GetKeyDown(KeyCode.Alpha1))&&(actualCharacter != Grupo3Protagonistas.HugoBurro)) 
         {
-            actualCharacter = 1;
+            actualCharacter = Grupo3Protagonistas.HugoBurro;
             player = new HugoBurro();
             
         }
-        if ((Input.GetKeyDown(KeyCode.Alpha2)) && (actualCharacter != 2) && (canChange))
+        if ((Input.GetKeyDown(KeyCode.Alpha2)) && (actualCharacter != Grupo3Protagonistas.AlwaysZUp) && (canChange))
         {
-            actualCharacter = 2;
+            actualCharacter = Grupo3Protagonistas.AlwaysZUp;
             player = new AlwaysZUp();
         }
-        if ((Input.GetKeyDown(KeyCode.Alpha3)) && (actualCharacter != 3) && (canChange))
+        if ((Input.GetKeyDown(KeyCode.Alpha3)) && (actualCharacter != Grupo3Protagonistas.Comander) && (canChange))
         {
-            actualCharacter = 3;
+            actualCharacter = Grupo3Protagonistas.Comander;
             player = new Comander();
         }
-        if ((Input.GetKeyDown(KeyCode.Alpha4)) && (actualCharacter != 4) && (canChange))
+        if ((Input.GetKeyDown(KeyCode.Alpha4)) && (actualCharacter != Grupo3Protagonistas.Iuno) && (canChange))
         {
-            actualCharacter = 4;
+            actualCharacter = Grupo3Protagonistas.Iuno;
             player = new Iuno();
         }
         if(ant != actualCharacter)
@@ -154,5 +154,9 @@ public class ChangeCharacterControl : MonoBehaviour
         {
             onFloor = true;
         }
+    }
+    public Grupo3Protagonistas GetActualCharacter()
+    {
+        return actualCharacter;
     }
 }

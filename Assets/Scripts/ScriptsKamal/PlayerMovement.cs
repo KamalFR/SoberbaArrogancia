@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private float normalGravity;
     private Rigidbody2D rb;
     private PlayerInputs input;
+    private Vector3 lastLook;
     private Vector3 lastMove;
     private void Awake()
     {
@@ -33,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         input.Player.Walk.started -= OnMove;
         input.Player.Walk.canceled -= OnMove;
     }
-    public void SetLastMove(Vector3 movementDirection)
+    public void SetLastLook(Vector3 movementDirection)
     {
         Vector3 zero = new Vector3(0f, 0f, 0f);
         if (movementDirection.y < 0)
@@ -42,13 +43,13 @@ public class PlayerMovement : MonoBehaviour
         }
         if (movementDirection != zero)
         {
-            lastMove = movementDirection;
+            lastLook = movementDirection;
         }
     }
     private void OnMove(InputAction.CallbackContext context)
     {
         Vector3 movementDirection = context.ReadValue<Vector2>();
-        SetLastMove(context.ReadValue<Vector2>());
+        SetLastLook(context.ReadValue<Vector2>());
         if ((movementDirection.x != 0) && (System.Math.Abs(movementDirection.x) < 1))
         {
             movementDirection.x /= 0.71f;
@@ -80,6 +81,10 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 GetLastMove()
     {
         return lastMove;
+    }
+    public Vector3 GetLastLook()
+    {
+        return lastLook;
     }
     public Rigidbody2D GetRigidbody2D()
     {

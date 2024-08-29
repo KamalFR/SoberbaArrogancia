@@ -18,7 +18,7 @@ public class Comander : PlayerBase
         if(Input.GetKeyDown(KeyCode.Space))
         {
             GameObject shootedBullet = MonoBehaviour.Instantiate(bullet, player.transform.position + player.GetPlayerMovement().GetLastMove(), Quaternion.identity);
-            shootedBullet.GetComponent<BulletScript>().SetBulletTragetory(player.GetPlayerMovement().GetLastMove()); 
+            shootedBullet.GetComponent<BulletScript>().SetBulletTragetory(player.GetPlayerMovement().GetLastLook()); 
         }
     }
 }
