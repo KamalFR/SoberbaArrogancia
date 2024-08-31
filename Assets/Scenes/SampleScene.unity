@@ -734,6 +734,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1198430551 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3335900765748807815, guid: e8be5970a7fe2fe439a7d5419179314e, type: 3}
+  m_PrefabInstance: {fileID: 6655980532992731909}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1833843413 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1927345484400342160, guid: e8be5970a7fe2fe439a7d5419179314e, type: 3}
@@ -1095,10 +1100,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3335900765748807815, guid: e8be5970a7fe2fe439a7d5419179314e, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335900765748807815, guid: e8be5970a7fe2fe439a7d5419179314e, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335900765748807815, guid: e8be5970a7fe2fe439a7d5419179314e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1256361753, guid: 4f25d9c9765fcbf46bd1c8156c705796, type: 3}
+    - target: {fileID: 3335900765748807815, guid: e8be5970a7fe2fe439a7d5419179314e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335900765748807815, guid: e8be5970a7fe2fe439a7d5419179314e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335900765748807815, guid: e8be5970a7fe2fe439a7d5419179314e, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6167097030932151671, guid: e8be5970a7fe2fe439a7d5419179314e, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6916040588393345700, guid: e8be5970a7fe2fe439a7d5419179314e, type: 3}
+      propertyPath: comander
+      value: 
+      objectReference: {fileID: 1198430551}
+    - target: {fileID: 7306469297923472433, guid: e8be5970a7fe2fe439a7d5419179314e, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 09a78c6f06d313044903c977de63a57e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
