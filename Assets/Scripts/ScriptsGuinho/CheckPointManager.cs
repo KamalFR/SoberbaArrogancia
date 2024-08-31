@@ -1,21 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Luksguin.Singleton;
 
-public class CheckPointManager : MonoBehaviour
+public class CheckPointManager : Singleton<CheckPointManager>
 {
-    public Transform[] checkPoints; // lista da posição de todos os checkpoints
+    public Transform[] checkPoints; // lista da posiÃ§Ã£o de todos os checkpoints
 
-    private void Start()
-    {
-        PlayerPosition.instance.transform.position = checkPoints[PlayerPrefs.GetInt("Position", 0)].position; // pega a posição do último checkpoint e manda o player pra lá
-    }
+    [HideInInspector] public int _lastPosition;
 
-    //public void OnDisable()
-    public void ResetPosition()
+    public void Kill()
     {
-        //reseta a posição para o spawn
-        PlayerPrefs.SetInt("Position", 0);
-        PlayerPrefs.Save();
+        PlayerPosition.instance.transform.position = checkPoints[_lastPosition].position;
     }
 }

@@ -8,12 +8,12 @@ public class CatUp : MonoBehaviour
 
     public GameObject cat; //prefab do gato
 
-    public Transform spawn1; // início do spawn
+    public Transform spawn1; // inÃ­cio do spawn
     public Transform spawn2; // fim do spawn
 
     public void SpawnCat()
     {
-        //cria o gato em uma posição aleatória entre o começo e o fim do spawn
+        //cria o gato em uma posiÃ§Ã£o aleatÃ³ria entre o comeÃ§o e o fim do spawn
         var projectille = Instantiate(cat);
         Vector3 spawnPosition = spawn1.position;
 
@@ -27,8 +27,6 @@ public class CatUp : MonoBehaviour
         while (true)
         {
             SpawnCat();
-
-
             yield return new WaitForSeconds(timeBetweenSpawn);
         }
     }

@@ -648,7 +648,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853030928}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -666,7 +666,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!212 &853030931
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -738,6 +738,34 @@ Transform:
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3335900765748807815, guid: e8be5970a7fe2fe439a7d5419179314e, type: 3}
   m_PrefabInstance: {fileID: 6655980532992731909}
+--- !u!1 &1833843408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1833843413}
+  - component: {fileID: 1833843412}
+  - component: {fileID: 1833843410}
+  - component: {fileID: 1833843411}
+  - component: {fileID: 1833843409}
+  - component: {fileID: 1833843414}
+  - component: {fileID: 1833843415}
+  - component: {fileID: 1833843416}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!60 &1833843409
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1833843413 stripped
 Transform:
