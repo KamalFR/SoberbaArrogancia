@@ -138,7 +138,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3854987074773450217}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -171,16 +171,16 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: -108474775, guid: 0336c1d8bf18bf647a65e22785cbeebd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &7306469297923472433
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d502ace4a5e199b42938bbd69f0cf84f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 9100000, guid: 09a78c6f06d313044903c977de63a57e, type: 2}
 --- !u!1 &5436655210813347423
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 4429733206287492282, guid: c51c88cc4c2e59c4cb860bbaf1751b45, type: 3}
   jumpForce: 10
-  hugoBurroSpeed: 10
+  hugoBurroSpeed: 20
 --- !u!114 &6639716845761543457
 MonoBehaviour:
   m_ObjectHideFlags: 0
