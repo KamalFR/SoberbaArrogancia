@@ -9,9 +9,14 @@ public class Iuno : PlayerBase
         player.GetComponent<PolygonCollider2D>().enabled = false;
         player.GetComponent<BoxCollider2D>().isTrigger = false;
         player.BackToNormalSpeed();
+        player.SetIsIuno(true);
     }
     public override void UpdateCharacter(ChangeCharacterControl player)
     {
-        //só segue a vida andando, ainda não sei como vai ser feito os objetos interativos, então é melhor esperar
+        if ((Input.GetKeyDown(KeyCode.Space)) && (player.GetCanInteract()))
+        {
+            player.GetInteractable().ActivePlataform();
+            player.SetCanInteract(false);
+        }
     }
 }

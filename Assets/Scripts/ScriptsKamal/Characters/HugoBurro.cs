@@ -10,6 +10,7 @@ public class HugoBurro : PlayerBase
         player.GetComponent<PolygonCollider2D>().enabled = true;
         player.GetComponent<BoxCollider2D>().isTrigger = true;
         player.GetPlayerMovement().SetSpeed(player.GetHugoBurroSpeed());
+        player.SetIsIuno(false);
     }
     public override void UpdateCharacter(ChangeCharacterControl player)
     {

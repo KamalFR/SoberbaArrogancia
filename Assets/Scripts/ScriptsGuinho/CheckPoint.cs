@@ -5,7 +5,6 @@ using UnityEngine;
 public class CheckPoint : MonoBehaviour
 {
     public int index;
-
     private SpriteRenderer _mySpriteRenderer;
 
     private void Awake()

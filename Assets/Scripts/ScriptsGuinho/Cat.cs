@@ -16,7 +16,6 @@ public class Cat : MonoBehaviour
         if(collision.tag == "Player")
         {
             CheckPointManager.instance.Kill();
-
             Destroy(gameObject, .1f);
         }
         else

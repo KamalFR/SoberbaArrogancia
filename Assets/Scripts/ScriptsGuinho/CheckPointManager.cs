@@ -5,7 +5,7 @@ using Luksguin.Singleton;
 
 public class CheckPointManager : Singleton<CheckPointManager>
 {
-    public Transform[] checkPoints; // lista da posição de todos os checkpoints
+    public Transform[] checkPoints; // lista da posiÃ§Ã£o de todos os checkpoints
 
     [HideInInspector] public int _lastPosition;
 

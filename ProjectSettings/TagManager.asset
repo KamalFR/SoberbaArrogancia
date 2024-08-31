@@ -7,6 +7,8 @@ TagManager:
   - Roof
   - Floor
   - Enemy
+  - PlataformPoints
+  - Switch
   layers:
   - Default
   - TransparentFX

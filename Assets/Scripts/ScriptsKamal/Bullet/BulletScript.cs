@@ -19,7 +19,7 @@ public class BulletScript : MonoBehaviour
     {
         if(collision.tag == "Enemy")
         {
-            //mata o bixo
+            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
         if (collision.tag == "Box")

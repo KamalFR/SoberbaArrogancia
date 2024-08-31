@@ -4,7 +4,7 @@ using UnityEngine;
 public class BigBoss : MonoBehaviour
 {
     public float speed;
-    public float minDistance; //distância mínima do boss pro player
+    public float minDistance; //distÃ¢ncia mÃ­nima do boss pro player
 
     private Vector3 _direction;
 
@@ -15,7 +15,7 @@ public class BigBoss : MonoBehaviour
 
     public void Movements()
     {
-        //checa a direção que o player está e vai até lá
+        //checa a direÃ§Ã£o que o player estÃ¡ e vai atÃ© lÃ¡
         if (PlayerPosition.instance.transform.position.x > transform.position.x)
         {
             _direction = new Vector3(1, 0);

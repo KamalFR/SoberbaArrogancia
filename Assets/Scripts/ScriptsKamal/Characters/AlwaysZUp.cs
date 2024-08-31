@@ -13,6 +13,7 @@ public class AlwaysZUp : PlayerBase
         player.BackToNormalSpeed();
         jumpForce = player.GetJumpForce();
         didSecondJump = true; //é necessário ser true para a repitição do código
+        player.SetIsIuno(false);
     }
 
     public override void UpdateCharacter(ChangeCharacterControl player)
@@ -23,14 +24,18 @@ public class AlwaysZUp : PlayerBase
             aux.y = 0f;
             player.GetComponent<Rigidbody2D>().velocity = aux;
             player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-            if(!didSecondJump)
-            {
-                didSecondJump = true;
-            }
             if (player.GetOnFloor())
             {
                 player.SetOnFloor(false);
                 didSecondJump = false;
+            }
+            else
+            {
+                if (!didSecondJump)
+                {
+                    player.gameObject.GetComponent<PlayerAnimation>().SetIsDoubleJumping(true);
+                    didSecondJump = true;
+                }
             }
         }
     }

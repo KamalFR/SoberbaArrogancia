@@ -7,21 +7,26 @@ public class ChangeCharacterControl : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private int jumpForce;
     [SerializeField] private int hugoBurroSpeed;
-    private int actualCharacter;
-    public PlayerBase player;
+    private Grupo3Protagonistas actualCharacter;
+    private PlayerBase player;
     private PlayerMovement playerMovement;
     private int normalSpeed;
     private bool canChange;
     private bool onFloor;
+    private bool isIuno;
+    private bool canInteract;
+    private SwitchControl interactable;
     private void Start()
     {
-        actualCharacter = 1;
+        actualCharacter = Grupo3Protagonistas.HugoBurro;
         player = new HugoBurro();
         playerMovement = GetComponent<PlayerMovement>();
         normalSpeed = playerMovement.GetSpeed();
         player.EnterCharacter(this);
         canChange = true;
         onFloor = true;
+        isIuno = false;
+        canInteract = false;
     }
     // Update is called once per frame
     private void Update()
@@ -31,26 +36,26 @@ public class ChangeCharacterControl : MonoBehaviour
     }
     private void CharacterSelection()
     {
-        int ant = actualCharacter;
-        if((Input.GetKeyDown(KeyCode.Alpha1))&&(actualCharacter != 1)) 
+        Grupo3Protagonistas ant = actualCharacter;
+        if((Input.GetKeyDown(KeyCode.Alpha1))&&(actualCharacter != Grupo3Protagonistas.HugoBurro)) 
         {
-            actualCharacter = 1;
+            actualCharacter = Grupo3Protagonistas.HugoBurro;
             player = new HugoBurro();
             
         }
-        if ((Input.GetKeyDown(KeyCode.Alpha2)) && (actualCharacter != 2) && (canChange))
+        if ((Input.GetKeyDown(KeyCode.Alpha2)) && (actualCharacter != Grupo3Protagonistas.AlwaysZUp) && (canChange))
         {
-            actualCharacter = 2;
+            actualCharacter = Grupo3Protagonistas.AlwaysZUp;
             player = new AlwaysZUp();
         }
-        if ((Input.GetKeyDown(KeyCode.Alpha3)) && (actualCharacter != 3) && (canChange))
+        if ((Input.GetKeyDown(KeyCode.Alpha3)) && (actualCharacter != Grupo3Protagonistas.Comander) && (canChange))
         {
-            actualCharacter = 3;
+            actualCharacter = Grupo3Protagonistas.Comander;
             player = new Comander();
         }
-        if ((Input.GetKeyDown(KeyCode.Alpha4)) && (actualCharacter != 4) && (canChange))
+        if ((Input.GetKeyDown(KeyCode.Alpha4)) && (actualCharacter != Grupo3Protagonistas.Iuno) && (canChange))
         {
-            actualCharacter = 4;
+            actualCharacter = Grupo3Protagonistas.Iuno;
             player = new Iuno();
         }
         if(ant != actualCharacter)
@@ -87,12 +92,37 @@ public class ChangeCharacterControl : MonoBehaviour
     {
         onFloor = set;
     }
+    public void SetIsIuno(bool set)
+    {
+        isIuno = set;
+        if(set == false)
+        {
+            canInteract = false;
+        }
+    }
+    public bool GetCanInteract()
+    {
+        return canInteract;
+    }
+    public void SetCanInteract(bool set)
+    {
+        canInteract = set;
+    }
+    public SwitchControl GetInteractable()
+    {
+        return interactable;
+    }
     //ver se o Huguinho pode mudar para os outros personagens maiores
-    private void OnTriggerEnter2D(Collider2D collision) //quando eu fico encostado e mudo pro Huguinho ele não registra a entrada
+    private void OnTriggerEnter2D(Collider2D collision) //quando eu fico encostado e mudo pra alguem ele não registra a entrada
     {
         if (collision.tag == "Roof")
         {
             canChange = false;
+        }
+        if((collision.tag == "Switch") && (isIuno))
+        {
+            interactable = collision.GetComponent<SwitchControl>();
+            canInteract = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -101,12 +131,21 @@ public class ChangeCharacterControl : MonoBehaviour
         {
             canChange = true;
         }
+        if (collision.tag == "Switch")
+        {
+            canInteract = false;
+        }
     }
-    private void OnTriggerStay2D(Collider2D collision) //diminiu a bastante chance de bugar
+    private void OnTriggerStay2D(Collider2D collision) //diminiu bastante chance de bugar
     {
         if(collision.tag == "Roof")
         {
             canChange = false;
+        }
+        if ((collision.tag == "Switch") && (isIuno))
+        {
+            interactable = collision.GetComponent<SwitchControl>();
+            canInteract = true;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -115,5 +154,9 @@ public class ChangeCharacterControl : MonoBehaviour
         {
             onFloor = true;
         }
+    }
+    public Grupo3Protagonistas GetActualCharacter()
+    {
+        return actualCharacter;
     }
 }
