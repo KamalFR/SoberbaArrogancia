@@ -4,26 +4,22 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
-    public int index; //cada toten deve receber um index em ordem crescente
-    
+    public int index;
+
     private SpriteRenderer _mySpriteRenderer;
 
     private void Awake()
     {
         _mySpriteRenderer = GetComponent<SpriteRenderer>();
-
-        if (PlayerPrefs.GetInt("Position") >= index && _mySpriteRenderer) _mySpriteRenderer.color = Color.yellow; //ativa visualmente os totens que já passamos
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // atualiza a última posição
-        if (collision.tag == "Player" && PlayerPrefs.GetInt("Position") < index)
+        if(collision.tag == "Player" && CheckPointManager.instance._lastPosition < index)
         {
-            PlayerPrefs.SetInt("Position", index);
-            PlayerPrefs.Save();
+            CheckPointManager.instance._lastPosition = index;
 
-            if(_mySpriteRenderer) _mySpriteRenderer.color = Color.yellow;
+            if (_mySpriteRenderer) _mySpriteRenderer.color = Color.yellow;
         }
     }
 }

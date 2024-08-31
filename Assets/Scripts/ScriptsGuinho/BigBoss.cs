@@ -40,6 +40,8 @@ public class BigBoss : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             transform.DOMoveX(transform.position.x -_direction.x, .9f);
+
+            CheckPointManager.instance.Kill();
         }
     }
 }

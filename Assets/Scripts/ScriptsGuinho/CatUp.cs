@@ -28,7 +28,6 @@ public class CatUp : MonoBehaviour
         {
             SpawnCat();
 
-
             yield return new WaitForSeconds(timeBetweenSpawn);
         }
     }
