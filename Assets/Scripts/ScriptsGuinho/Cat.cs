@@ -4,21 +4,14 @@ using UnityEngine;
 
 public class Cat : MonoBehaviour
 {
-    public float speed;
-
-    private void Update()
-    {
-        transform.Translate(new Vector2(0, -1) * speed * Time.deltaTime);
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.tag == "Player")
         {
             CheckPointManager.instance.Kill();
             Destroy(gameObject, .1f);
         }
-        else
+        else if(collision.tag == "Floor")
         {
             Destroy(gameObject);
         }
