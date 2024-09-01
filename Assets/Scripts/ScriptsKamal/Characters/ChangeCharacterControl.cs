@@ -41,22 +41,21 @@ public class ChangeCharacterControl : MonoBehaviour
         {
             actualCharacter = Grupo3Protagonistas.HugoBurro;
             player = new HugoBurro();
-            
         }
         if ((Input.GetKeyDown(KeyCode.Alpha2)) && (actualCharacter != Grupo3Protagonistas.AlwaysZUp) && (canChange))
+        {
+            actualCharacter = Grupo3Protagonistas.Iuno;
+            player = new Iuno();
+        }
+        if ((Input.GetKeyDown(KeyCode.Alpha3)) && (actualCharacter != Grupo3Protagonistas.Comander) && (canChange))
         {
             actualCharacter = Grupo3Protagonistas.AlwaysZUp;
             player = new AlwaysZUp();
         }
-        if ((Input.GetKeyDown(KeyCode.Alpha3)) && (actualCharacter != Grupo3Protagonistas.Comander) && (canChange))
+        if ((Input.GetKeyDown(KeyCode.Alpha4)) && (actualCharacter != Grupo3Protagonistas.Iuno) && (canChange))
         {
             actualCharacter = Grupo3Protagonistas.Comander;
             player = new Comander();
-        }
-        if ((Input.GetKeyDown(KeyCode.Alpha4)) && (actualCharacter != Grupo3Protagonistas.Iuno) && (canChange))
-        {
-            actualCharacter = Grupo3Protagonistas.Iuno;
-            player = new Iuno();
         }
         if(ant != actualCharacter)
         {
