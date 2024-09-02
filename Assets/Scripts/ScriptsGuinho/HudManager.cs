@@ -36,8 +36,8 @@ public class HudManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2) && _lastPlayer != 2)
         {
             hudAnimator.SetBool(hugoBool, false);
-            hudAnimator.SetBool(alwaysBool, true);
-            hudAnimator.SetBool(iunoBool, false);
+            hudAnimator.SetBool(alwaysBool, false);
+            hudAnimator.SetBool(iunoBool, true);
             hudAnimator.SetBool(comanderBool, false);
 
             _lastPlayer = 2;
@@ -46,8 +46,8 @@ public class HudManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3) && _lastPlayer != 3)
         {
             hudAnimator.SetBool(hugoBool, false);
-            hudAnimator.SetBool(alwaysBool, false);
-            hudAnimator.SetBool(iunoBool, true);
+            hudAnimator.SetBool(alwaysBool, true);
+            hudAnimator.SetBool(iunoBool, false);
             hudAnimator.SetBool(comanderBool, false);
 
             _lastPlayer = 3;
