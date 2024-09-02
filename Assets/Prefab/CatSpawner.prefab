@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenSpawn: 3
-  cat: {fileID: 6385762774148480956, guid: 5048c0bb036334b4e8c1a8f399bc74c2, type: 3}
+  cat: {fileID: 6385762774148480956, guid: dc7432544b4356a43b51dde480e80de1, type: 3}
   spawn1: {fileID: 299801138414285070}
   spawn2: {fileID: 4615449542600699753}
 --- !u!61 &5107127580097905078
