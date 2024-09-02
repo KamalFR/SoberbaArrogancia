@@ -45,7 +45,6 @@ public class Pants : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.name);
         if(collision.tag == "Player")
         {
             CheckPointManager.instance.Kill();
