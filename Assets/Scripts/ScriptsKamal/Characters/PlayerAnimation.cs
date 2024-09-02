@@ -67,7 +67,7 @@ public class PlayerAnimation : MonoBehaviour
         AnimatorHelper animatorHelper = hugoBurro.gameObject.GetComponent<AnimatorHelper>();
         if(rb.velocity.x == 0f)
         {
-            if (playerMovement.GetLastLook().x > 0f)
+            if (playerMovement.GetLastLook().x >= 0f)
             {
                 animatorHelper.SetAnimation("HugoBurroIdle");
             }
@@ -88,13 +88,12 @@ public class PlayerAnimation : MonoBehaviour
     private void AlwaysZUpAnimation()
     {
         AnimatorHelper animatorHelper = alwaysZUp.gameObject.GetComponent<AnimatorHelper>();
-        
         if (rb.velocity.y == 0f)
         {
             isDoubleJumping = false;
             if (rb.velocity.x == 0f)
             {
-                if (playerMovement.GetLastLook().x > 0f)
+                if (playerMovement.GetLastLook().x >= 0f)
                 {
                     animatorHelper.SetAnimation("JeffIdle");
                 }

@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - PlataformPoints
   - Switch
+  - CatDestroy
+  - Cocao
+  - Muda
   layers:
   - Default
   - TransparentFX

@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 //[RequireComponent(typeof(Animator))]
 public class AnimatorHelper : MonoBehaviour
 {
-    [SerializeField] private AnimatorController controller;
+    [SerializeField] private RuntimeAnimatorController controller;
     private Animator animator;
     void Start()
     {
