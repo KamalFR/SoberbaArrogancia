@@ -12,7 +12,7 @@ public class Cat : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.tag == "Player")
         {
             CheckPointManager.instance.Kill();
             Destroy(gameObject, .1f);
