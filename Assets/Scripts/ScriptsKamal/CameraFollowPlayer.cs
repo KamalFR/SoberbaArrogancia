@@ -6,7 +6,6 @@ public class CameraFollowPlayer : MonoBehaviour
 {
     [SerializeField] private Transform player;
     private Vector3 aux;
-
     private void Start()
     {
         aux = player.position;

@@ -15,6 +15,7 @@ public class Comander : PlayerBase
         bullet = player.GetBulletPrefab();
         player.SetIsIuno(false);
         time = 0f;
+        player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
     }
     public override void UpdateCharacter(ChangeCharacterControl player)
     {

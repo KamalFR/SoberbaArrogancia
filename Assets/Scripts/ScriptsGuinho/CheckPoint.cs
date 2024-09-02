@@ -6,10 +6,13 @@ public class CheckPoint : MonoBehaviour
 {
     public int index;
     private SpriteRenderer _mySpriteRenderer;
+    private AnimatorHelper animator;
 
     private void Awake()
     {
         _mySpriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<AnimatorHelper>();
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -18,7 +21,7 @@ public class CheckPoint : MonoBehaviour
         {
             CheckPointManager.instance._lastPosition = index;
 
-            if (_mySpriteRenderer) _mySpriteRenderer.color = Color.yellow;
+            animator.SetAnimation("Ativado");
         }
     }
 }

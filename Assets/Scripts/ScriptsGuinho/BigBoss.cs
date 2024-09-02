@@ -8,6 +8,13 @@ public class BigBoss : MonoBehaviour
 
     private Vector3 _direction;
 
+    private Vector3 inicalPosition;
+
+    private void Start()
+    {
+        inicalPosition = transform.position;
+    }
+
     private void Update()
     {
         Movements();
@@ -34,13 +41,14 @@ public class BigBoss : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         //recuo ao tocar o player
         if (collision.transform.tag == "Player")
         {
-            transform.DOMoveX(transform.position.x -_direction.x, .9f);
-
+            //transform.DOMoveX(transform.position.x -_direction.x, .9f);
+            transform.position = inicalPosition;
+            gameObject.SetActive(false);
             CheckPointManager.instance.Kill();
         }
     }

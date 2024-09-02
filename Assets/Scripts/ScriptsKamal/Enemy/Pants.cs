@@ -43,10 +43,9 @@ public class Pants : MonoBehaviour
             count = 0;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.name);
-        if(collision.tag == "Player")
+        if (collision.transform.tag == "Player")
         {
             CheckPointManager.instance.Kill();
         }
