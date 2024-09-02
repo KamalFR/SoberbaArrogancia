@@ -378,7 +378,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 211510933, guid: 977ec02eb0f912644bee30f4e2a33428, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -477,4 +477,4 @@ MonoBehaviour:
   plataformPoints:
   - {fileID: 606902119172688996}
   - {fileID: 4927990345438859928}
-  speed: 5
+  speed: 3
